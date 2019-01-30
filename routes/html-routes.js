@@ -11,4 +11,17 @@ module.exports = function(app) {
       });
     });
   });
+
+  app.get("/sort/state", function(req, res){
+    db.Reports.findAll({
+      where: {
+        state: req.body.state
+      },
+      include: [db.Users]
+    }).then(function(dbData){
+      res.render("sort-state", {
+        reports: dbData
+      })
+    })
+  })
 };

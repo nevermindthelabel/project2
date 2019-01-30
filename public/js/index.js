@@ -1,5 +1,5 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
+var $userName = $("#user-name");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
@@ -12,19 +12,19 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "api/users",
       data: JSON.stringify(example)
     });
   },
   getExamples: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/users",
       type: "GET"
     });
   },
   deleteExample: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/users/" + id,
       type: "DELETE"
     });
   }
@@ -65,11 +65,10 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+    userName: $userName.val().trim()
   };
 
-  if (!(example.text && example.description)) {
+  if (!example.userName) {
     alert("You must enter an example text and description!");
     return;
   }
@@ -78,7 +77,7 @@ var handleFormSubmit = function(event) {
     refreshExamples();
   });
 
-  $exampleText.val("");
+  $userName.val("");
   $exampleDescription.val("");
 };
 

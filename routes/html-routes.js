@@ -15,6 +15,15 @@ module.exports = function(app) {
   app.get("/users/new", function(req, res) {
     res.render("new-user");
   });
+  app.get("/reports/new", function(req, res) {
+    db.Reports.findAll({
+      include: [db.Users]
+    }).then(function(dbData) {
+      res.render("new-report", {
+        reports: dbData
+      });
+    });
+  });
   //GET Route to search by state
   app.get("/search/state/:state", function(req, res) {
     db.Reports.findAll({

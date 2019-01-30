@@ -1,0 +1,26 @@
+<form class="clearfix mb-4" action="POST">
+    <div class="form-group">
+        <label for="example-text">Enter Report Information</label>
+        <input type="text" id="type" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+        <input type="text" id="description" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+        <input type="text" id="location" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+        <input type="text" id="city" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+        <input type="text" id="state" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+    </div>
+    <button id="submit-report" class="btn btn-primary float-right">Submit</button>
+</form>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/new-report.js"></script>
+
+<h3>Reports:</h3>
+<ul id="example-list" class="list-group">
+    {{#each reports}}
+    <li>Type: {{this.type}}</li>
+    <li>Description: {{this.description}}</li>
+    <li>Location: {{this.location}}</li>
+    <li>City: {{this.city}}</li>
+    <li>State: {{this.state}}</li>
+    <hr>
+    {{/each}}
+</ul>

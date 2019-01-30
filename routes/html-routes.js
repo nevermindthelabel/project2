@@ -12,7 +12,9 @@ module.exports = function(app) {
       });
     });
   });
-
+  app.get("/users/new", function(req, res) {
+    res.render("new-user");
+  });
   //GET Route to search by state
   app.get("/search/state/:state", function(req, res) {
     db.Reports.findAll({

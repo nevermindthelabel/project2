@@ -3,10 +3,31 @@
     <div class="row">
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
         <button onclick="window.location.href='/users/new'" id="new-user" class="btn btn-primary float-right">New User</button>
         <button onclick="window.location.href='/reports/new'" id="new-report" class="btn btn-primary float-right">New
           Report</button>
+        <h2>Traffic</h2>
+
+        <form class="clearfix mb-4" action="POST">
+          <div class="form-group">
+            <label for="example-text">User Name</label>
+            <input type="text" id="user-name" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+          </div>
+          <button id="submit" class="btn btn-primary float-right">Submit</button>
+        </form>
+
+        <form class="clearfix mb-4" action="POST">
+          <div class="form-group">
+            <label for="example-text">Enter Report Information</label>
+            <input type="text" id="type" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+            <input type="text" id="description" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+            <input type="text" id="location" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+            <input type="text" id="city" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+            <input type="text" id="state" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+          </div>
+          <button id="submit-report" class="btn btn-primary float-right">Submit</button>
+        </form>
+
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <label for="example-text">City Search</label>
@@ -17,6 +38,9 @@
         <h3>Reports:</h3>
         <ul id="example-list" class="list-group">
           {{#each reports}}
+          <li>Type: {{this.city}}</li>
+          <li>Description: {{this.description}}</li>
+          <li>Location: {{this.state}}</li>
           <li>Type: {{this.type}}</li>
           <li>Description: {{this.description}}</li>
           <li>Location: {{this.location}}</li>

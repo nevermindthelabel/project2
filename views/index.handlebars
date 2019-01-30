@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
+        <h2>Traffic</h2>
 
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
@@ -24,8 +24,6 @@
           </div>
           <button id="submit-report" class="btn btn-primary float-right">Submit</button>
         </form>
-
-
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <label for="example-text">City Search</label>
@@ -36,6 +34,9 @@
         <h3>Reports:</h3>
         <ul id="example-list" class="list-group">
           {{#each reports}}
+          <li>Type: {{this.city}}</li>
+          <li>Description: {{this.description}}</li>
+          <li>Location: {{this.state}}</li>
           <li>Type: {{this.type}}</li>
           <li>Description: {{this.description}}</li>
           <li>Location: {{this.location}}</li>

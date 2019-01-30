@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
+        <h2>Traffic</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <label for="example-text">Example Text</label>
@@ -13,15 +13,29 @@
             <label for="example-description">Example Description</label>
             <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
           </div>
+          <form>
+            City Name:<br>
+            <input type="text" name="citynames"><br>
+            State Name:<br>
+            <input type="text" name="statename">
+          </form>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
         <h3>Examples:</h3>
         <ul id="example-list" class="list-group">
+<<<<<<< Updated upstream
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
             <a href="example/{{this.id}}">{{this.text}}</a>
             <button class="btn btn-danger float-right delete">ｘ</button>
           </li>
+=======
+          {{#each reports}}
+          <li>Type: {{this.city}}</li>
+          <li>Description: {{this.description}}</li>
+          <li>Location: {{this.state}}</li>
+          <hr>
+>>>>>>> Stashed changes
           {{/each}}
         </ul>
       </div>

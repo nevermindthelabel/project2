@@ -1,8 +1,12 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
+var $searchCityBtn = $("#search-city");
+var $submitReportBtn = $("#submit-report");
+var $reportType = $("#type");
+var $reportDescription = $("#description");
+var $reportLocation = $("#location");
+var $reportCity = $("#city");
+var $reportState = $("#state");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -12,20 +16,36 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "/api/users",
       data: JSON.stringify(example)
     });
   },
   getExamples: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "/api/reports",
       type: "GET"
     });
   },
   deleteExample: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "/api/users/" + id,
       type: "DELETE"
+    });
+  },
+  searchCity: function(city) {
+    return $.ajax({
+      url: "/search/city/" + city,
+      type: "GET"
+    });
+  },
+  submitReport: function(data) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "/api/reports",
+      data: JSON.stringify(data)
     });
   }
 };
@@ -58,30 +78,6 @@ var refreshExamples = function() {
     $exampleList.append($examples);
   });
 };
-
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
-  event.preventDefault();
-
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-  };
-
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
-
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
-
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
 var handleDeleteBtnClick = function() {
@@ -94,6 +90,31 @@ var handleDeleteBtnClick = function() {
   });
 };
 
+var handleReportSubmit = function(event) {
+  event.preventDefault();
+
+  var data = {
+    type: $reportType.val().trim(),
+    description: $reportDescription.val().trim(),
+    location: $reportLocation.val().trim(),
+    city: $reportCity.val().trim(),
+    state: $reportState.val().trim()
+  };
+
+  API.submitReport(data).then(function() {
+    console.log(data);
+    location.reload();
+  });
+};
+
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+$searchCityBtn.on(
+  "click",
+  API.searchCity(
+    $("#city-name")
+      .val()
+      .trim()
+  )
+);
+$submitReportBtn.on("click", handleReportSubmit);

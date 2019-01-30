@@ -3,6 +3,13 @@ var $userName = $("#user-name");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
+var $searchCityBtn = $("#search-city");
+var $submitReportBtn = $("#submit-report");
+var $reportType = $("#type");
+var $reportDescription = $("#description");
+var $reportLocation = $("#location");
+var $reportCity = $("#city");
+var $reportState = $("#state");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -18,7 +25,7 @@ var API = {
   },
   getExamples: function() {
     return $.ajax({
-      url: "api/users",
+      url: "api/reports",
       type: "GET"
     });
   },
@@ -26,6 +33,22 @@ var API = {
     return $.ajax({
       url: "api/users/" + id,
       type: "DELETE"
+    });
+  },
+  searchCity: function(city) {
+    return $.ajax({
+      url: "search/city/" + city,
+      type: "GET"
+    });
+  },
+  submitReport: function(data) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "api/reports",
+      data: JSON.stringify(data)
     });
   }
 };
@@ -93,6 +116,32 @@ var handleDeleteBtnClick = function() {
   });
 };
 
+var handleReportSubmit = function(event) {
+  event.preventDefault();
+
+  var data = {
+    type: $reportType.val().trim(),
+    description: $reportDescription.val().trim(),
+    location: $reportLocation.val().trim(),
+    city: $reportCity.val().trim(),
+    state: $reportState.val().trim()
+  };
+
+  API.submitReport(data).then(function() {
+    console.log(data);
+    location.reload();
+  });
+};
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+$searchCityBtn.on(
+  "click",
+  API.searchCity(
+    $("#city-name")
+      .val()
+      .trim()
+  )
+);
+$submitReportBtn.on("click", handleReportSubmit);

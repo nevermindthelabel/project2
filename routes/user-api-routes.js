@@ -20,7 +20,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Post]
+      include: [db.Reports]
     }).then(function(dbData) {
       res.json(dbData);
     });

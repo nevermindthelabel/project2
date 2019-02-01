@@ -31,7 +31,7 @@ var handleReportSubmit = function(event) {
 
   API.submitReport(data).then(function() {
     console.log(data);
-    location.reload();
+    //location.reload();
   });
 };
 

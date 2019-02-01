@@ -1,6 +1,7 @@
 // Get references to page elements
 var $userName = $("#user-name");
 var $submitBtn = $("#user-submit");
+var $userTable = $("#user-table");
 
 var API = {
   newUser: function(userName) {
@@ -27,9 +28,17 @@ var handleUserSubmit = function(event) {
     return;
   }
 
-  API.newUser(userObject).then(function() {
-    console.log("DONE");
+  API.newUser(userObject).then(function(data) {
+    console.log(data);
+    buildTable(data.userName);
   });
 };
+
+function buildTable(userName) {
+  var tr = $("<tr>");
+  var td = $("<td>").text(userName);
+  tr.append(td);
+  $userTable.append(tr);
+}
 
 $submitBtn.on("click", handleUserSubmit);

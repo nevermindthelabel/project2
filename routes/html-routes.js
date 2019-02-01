@@ -12,9 +12,12 @@ module.exports = function(app) {
       });
     });
   });
+  //GET Route to display submit new user form
   app.get("/users/new", function(req, res) {
     res.render("new-user");
   });
+
+  //GET Route to display submit new report page
   app.get("/reports/new", function(req, res) {
     db.Reports.findAll({
       include: [db.Users]

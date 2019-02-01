@@ -25,7 +25,7 @@ var API = {
 
 API.returnUsers().then(function(data) {
   for (var i = 0; i < data.length; i++) {
-    buildTable(data[i].userName);
+    buildTable(data[i].userName, data[i].id);
   }
 });
 
@@ -46,9 +46,11 @@ var handleUserSubmit = function(event) {
   });
 };
 
-function buildTable(userName) {
+function buildTable(userName, userId) {
   var tr = $("<tr>");
-  var td = $("<td>").text(userName);
+  var td = $("<td>")
+    .text(userName)
+    .attr("data", userId);
   tr.append(td);
   $userTable.append(tr);
 }

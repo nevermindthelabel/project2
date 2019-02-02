@@ -53,3 +53,5 @@ db.sequelize.sync(syncOptions).then(function() {
     console.log("App listening on http://localhost:" + PORT);
   });
 });
+
+module.exports = app;

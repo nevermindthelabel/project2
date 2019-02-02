@@ -5,14 +5,14 @@ module.exports = {
     username: process.env.USER,
     password: process.env.PASS,
     database: "traffic_db",
-    host: process.env.HOST,
+    host: localhost,
     dialect: "mysql"
   },
   test: {
     username: process.env.USER,
     password: process.env.PASS,
     database: "testdb",
-    host: process.env.HOST,
+    host: localhost,
     dialect: "mysql"
   },
   production: {

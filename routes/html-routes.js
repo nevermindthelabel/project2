@@ -24,6 +24,10 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/search", function(req, res) {
+    res.render("search-landing");
+  });
+
   //GET Route to search by state
   app.get("/search/state/:state", function(req, res) {
     db.Reports.findAll({

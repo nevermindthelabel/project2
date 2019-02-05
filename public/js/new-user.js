@@ -1,5 +1,5 @@
 // Get references to page elements
-var $userName = $("#user-name");
+var $userName = $("#username");
 var $userPass = $("#password");
 var $submitBtn = $("#user-submit");
 

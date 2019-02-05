@@ -3,7 +3,7 @@ var $reportType = $("#type");
 var $reportDescription = $("#description");
 var $reportLocation = $("#location");
 var $reportCity = $("#city");
-var $reportState = $("#state");
+var $reportState = $("#state-select");
 
 var API = {
   submitReport: function(data) {
@@ -22,16 +22,31 @@ var handleReportSubmit = function(event) {
   event.preventDefault();
 
   var data = {
-    type: $reportType.val().trim(),
-    description: $reportDescription.val().trim(),
-    location: $reportLocation.val().trim(),
-    city: $reportCity.val().trim(),
-    state: $reportState.val().trim()
+    type: $reportType
+      .val()
+      .trim()
+      .toLowerCase(),
+    description: $reportDescription
+      .val()
+      .trim()
+      .toLowerCase(),
+    location: $reportLocation
+      .val()
+      .trim()
+      .toLowerCase(),
+    city: $reportCity
+      .val()
+      .trim()
+      .toLowerCase(),
+    state: $reportState
+      .val()
+      .trim()
+      .toLowerCase()
   };
 
   API.submitReport(data).then(function() {
     console.log(data);
-    //location.reload();
+    location.reload();
   });
 };
 

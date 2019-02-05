@@ -1,58 +1,40 @@
 // Get references to page elements
 var $userName = $("#user-name");
+var $userPass = $("#password");
 var $submitBtn = $("#user-submit");
-var $userTable = $("#user-table");
 
 var API = {
-  newUser: function(userName) {
+  newUser: function(userData) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
       url: "/api/users",
-      data: JSON.stringify(userName)
-    });
-  },
-
-  returnUsers: function() {
-    return $.ajax({
-      type: "GET",
-      url: "/api/users"
+      data: JSON.stringify(userData)
     });
   }
 };
-
-API.returnUsers().then(function(data) {
-  for (var i = 0; i < data.length; i++) {
-    buildTable(data[i].userName, data[i].id);
-  }
-});
 
 var handleUserSubmit = function(event) {
   event.preventDefault();
 
   var userObject = {
-    userName: $userName.val().trim()
+    userName: $userName.val(),
+    password: $userPass.val()
   };
 
   if (!userObject.userName) {
     alert("You must enter a user name");
     return;
+  } else if (!userObject.password) {
+    alert("You must enter a password");
+    return;
   }
 
-  API.newUser(userObject).then(function(data) {
-    console.log(data);
+  API.newUser(userObject).then(function() {
+    window.location.href = "/";
   });
 };
-
-function buildTable(userName, userId) {
-  var tr = $("<tr>");
-  var td = $("<td>")
-    .text(userName)
-    .attr("data", userId);
-  tr.append(td);
-  $userTable.append(tr);
-}
 
 $submitBtn.on("click", handleUserSubmit);

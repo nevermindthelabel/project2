@@ -3,7 +3,7 @@ P2-Team-3 Collaboration Project
 
 # Project Title: Traffic
 <br>
-##Team Members:
+## Team Members:
 <br>
 
 Matt Kilcup <p>
@@ -87,7 +87,7 @@ The cloned package.json will allow the command to install all the set dependenci
 
 Install the package(s) from the terminal in the folder the application was cloned.
 
-###Dependencies
+### Dependencies
 
 - bcrypt-nodejs (https://www.npmjs.com/package/bcrypt-nodejs)
 - connect-flash (https://www.npmjs.com/package/connect-flash)
@@ -101,7 +101,7 @@ Install the package(s) from the terminal in the folder the application was clone
 - sequelize (https://www.npmjs.com/package/sequelize)
 
 
-###Dev Dependencies
+### Dev Dependencies
 
 - chai (https://www.npmjs.com/package/chai)
 - chai-http (https://www.npmjs.com/package/chai-http)
@@ -134,23 +134,23 @@ Below are the screens of the application:
 
 
 
-![Image of Home Screen]( https://github.com/cbessjr/Project-2/blob/master/public/img/Home_Screen.png)
+![Image of Home Screen](https://github.com/cbessjr/Project-2/blob/master/public/img/Home_Screen.png)
 
 <br>
 
-![Image of New User Screen]( https://github.com/cbessjr/Project-2/blob/master/public/img/New_User_Screen.png)
+![Image of New User Screen](https://github.com/cbessjr/Project-2/blob/master/public/img/New_User_Screen.png)
 
 <br>
 
-![Image of Search Screen]( https://github.com/cbessjr/Project-2/blob/master/public/img/Search_Screen.png)
+![Image of Search Screen](https://github.com/cbessjr/Project-2/blob/master/public/img/Search_Screen.png)
 
 <br>
 
-![Image of New Report]( https://github.com/cbessjr/Project-2/blob/master/public/img/New_Report_Screen.png)
+![Image of New Report](https://github.com/cbessjr/Project-2/blob/master/public/img/New_Report_Screen.png)
 
 <br>
 
-![Image of Login Menu]( https://github.com/cbessjr/Project-2/blob/master/public/img/Login_Menu.png)
+![Image of Login Menu](https://github.com/cbessjr/Project-2/blob/master/public/img/Login_Menu.png)
 
 <br>
 

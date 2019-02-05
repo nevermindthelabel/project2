@@ -2,24 +2,19 @@ require("dotenv").config();
 
 module.exports = {
   development: {
-    username: process.env.USER,
+    username: process.env.MYSQL_USERNAME,
     password: process.env.PASS,
     database: "traffic_db",
-    host: localhost,
+    host: process.env.HOST,
     dialect: "mysql"
   },
   test: {
-    username: process.env.USER,
+    username: process.env.MYSQL_USERNAME,
     password: process.env.PASS,
     database: "testdb",
-<<<<<<< Updated upstream
-    host: localhost,
-    dialect: "mysql"
-=======
     host: process.env.HOST,
     dialect: "mysql",
     logging: false
->>>>>>> Stashed changes
   },
   production: {
     // eslint-disable-next-line camelcase

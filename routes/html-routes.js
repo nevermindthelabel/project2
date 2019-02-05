@@ -3,11 +3,8 @@ var db = require("../models");
 module.exports = function(app) {
   //GET Route to root page
   app.get("/", function(req, res) {
-    db.Reports.findAll({}).then(function(dbData) {
-      res.render("index", {
-        msg: "Welcome!",
-        reports: dbData
-      });
+    res.render("index", {
+      msg: "TraffApp!"
     });
   });
   //GET Route to display submit new user form
@@ -17,11 +14,12 @@ module.exports = function(app) {
 
   //GET Route to display submit new report page
   app.get("/reports/new", function(req, res) {
-    db.Reports.findAll({}).then(function(dbData) {
-      res.render("new-report", {
-        reports: dbData
-      });
-    });
+    res.render("new-report");
+  });
+
+  //GET Route redirecting to search landing page
+  app.get("/search", function(req, res) {
+    res.render("search-landing");
   });
 
   //GET Route to search by state

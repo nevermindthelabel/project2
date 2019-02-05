@@ -27,6 +27,7 @@ app.use(express.static("public"));
 require("./routes/html-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
 require("./routes/report-api-routes.js")(app);
+require("./routes/login-routes.js")(app);
 
 // Handlebars
 app.engine(

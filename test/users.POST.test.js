@@ -33,7 +33,7 @@ describe("POST /api/users", function() {
         expect(responseStatus).to.equal(200);
 
         var reqBodyEnc = {
-          userName: "Example Name"
+          userName: reqBody.userName
         };
         expect(responseBody)
           .to.be.an("object")

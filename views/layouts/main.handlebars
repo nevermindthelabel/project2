@@ -21,10 +21,40 @@
             <span class="glyphicon glyphicon-search"></span>
           </button>
         </span>
+        <button onclick="document.getElementById('id01').style.display='block'">Login</button>
+        <!-- Modal Content -->
+        <form class="modal-content animate" action="/action_page.php">
+          <div class="imgcontainer">
+          </div>
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <button type="submit">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+          <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            {{!-- <span class="psw">Forgot <a href="#">password?</a></span> --}}
+          </div>
+        </form>
       </div>
-    </form>
+  </div>
+  </form>
   </div>
   {{{body}}}
+
+  <footer>
+    <p class="text-center"> Developed By <a href="https://github.com/cbessjr">Charles Bess</a>,
+      <a href="https://github.com/BrenKnigh">Brenden Knight</a>,
+      <a href="https://github.com/jamesbarker585">James Barker</a>,
+      <a href="https://github.com/nevermindthelabel">Matt Kilcup</a>,
+      <a href="https://github.com/ghost0fharambe">Adam Karman</a></p>
+    <script src="assets/javascript/logic.js"></script>
+  </footer>
 </body>
 
 </html>

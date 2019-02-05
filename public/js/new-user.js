@@ -1,6 +1,6 @@
 // Get references to page elements
-var $userName = $("#username");
-var $userPass = $("#password");
+var $userName = $("#new-username");
+var $userPass = $("#new-password");
 var $submitBtn = $("#user-submit");
 
 var API = {
@@ -18,9 +18,9 @@ var API = {
 
 var handleUserSubmit = function(event) {
   event.preventDefault();
-
+  console.log($userName.val());
   var userObject = {
-    userName: $userName.val(),
+    userName: $("#new-username").val(),
     password: $userPass.val()
   };
 

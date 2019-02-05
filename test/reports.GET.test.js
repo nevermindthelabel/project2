@@ -10,6 +10,7 @@ chai.use(chaiHttp);
 var request;
 
 describe("GET /api/reports", function() {
+  this.timeout(10000);
   // Before each test begins, create a new request server for testing
   // & delete all examples from the db
   beforeEach(function() {
@@ -20,6 +21,7 @@ describe("GET /api/reports", function() {
   });
 
   it("should find all examples", function(done) {
+    setTimeout(done, 10000);
     // Add some examples to the db to test with
     db.Reports.bulkCreate([
       {

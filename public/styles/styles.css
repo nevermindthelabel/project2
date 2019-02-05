@@ -99,10 +99,7 @@ body {
   background: lightblue;
 }
 
-/* button:focus {
-  outline: 0;
-}
-
-.navbar .dropdown-menu .form-control {
-  width: 200px;
-} */
+/* #dropdownMenu1 {
+  margin-left: 350%;
+  color: white;
+ } */

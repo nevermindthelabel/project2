@@ -10,6 +10,7 @@ chai.use(chaiHttp);
 var request;
 
 describe("POST /api/reports", function() {
+  this.timeout(10000);
   // Before each test begins, create a new request server for testing
   // & delete all examples from the db
   beforeEach(function() {
@@ -18,6 +19,7 @@ describe("POST /api/reports", function() {
   });
 
   it("should save an example", function(done) {
+    setTimeout(done, 10000);
     // Create an object to send to the endpoint
     var reqBody = {
       type: "First Example",

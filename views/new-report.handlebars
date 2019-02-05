@@ -1,14 +1,69 @@
-<form class="clearfix mb-4" action="POST">
-    <div class="form-group">
-        <label for="example-text">Enter Report Information</label>
-        <input type="text" id="type" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-        <input type="text" id="description" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-        <input type="text" id="location" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-        <input type="text" id="city" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-        <input type="text" id="state" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+<div class="container">
+    <div class="container">
+        <form class="clearfix mb-4" action="POST">
+            <div class="form-group">
+                <label for="new-report">Enter Report Information</label>
+                <input type="text" id="type" class="form-control" aria-describedby="new-report" placeholder="Type">
+                <input type="text" id="description" class="form-control" aria-describedby="new-report" placeholder="Description">
+                <input type="text" id="location" class="form-control" aria-describedby="new-report" placeholder="Location (Describe location)">
+                <input type="text" id="city" class="form-control" aria-describedby="new-report" placeholder="City">
+                <select class="form-control form-control-lg" id="state-select">
+                    <option>Alabama</option>
+                    <option>Alaska</option>
+                    <option>Arizona</option>
+                    <option>Arkansas</option>
+                    <option>California</option>
+                    <option>Colorado</option>
+                    <option>Connecticut</option>
+                    <option>Delaware</option>
+                    <option>Florida</option>
+                    <option>Georgia</option>
+                    <option>Hawaii</option>
+                    <option>Idaho</option>
+                    <option>Illinois</option>
+                    <option>Indiana</option>
+                    <option>Iowa</option>
+                    <option>Kansas</option>
+                    <option>Kentucky</option>
+                    <option>Louisiana</option>
+                    <option>Maine</option>
+                    <option>Maryland</option>
+                    <option>Massachusetts</option>
+                    <option>Michigan</option>
+                    <option>Minnesota</option>
+                    <option>Missouri</option>
+                    <option>Montana</option>
+                    <option>Nebraska</option>
+                    <option>Nevada</option>
+                    <option>New Hampshire</option>
+                    <option>New Jersey</option>
+                    <option>New Mexico</option>
+                    <option>New York</option>
+                    <option>North Carolina</option>
+                    <option>North Dakota</option>
+                    <option>Ohio</option>
+                    <option>Oklahoma</option>
+                    <option>Oregon</option>
+                    <option>Pennsylvania</option>
+                    <option>Rhode Island</option>
+                    <option>South Carolina</option>
+                    <option>South Dakota</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Utah</option>
+                    <option>Vermont</option>
+                    <option>Virginia</option>
+                    <option>Washington</option>
+                    <option>Washington DC</option>
+                    <option>West Virginia</option>
+                    <option>Wisconsin</option>
+                    <option>Wyoming</option>
+                </select>
+            </div>
+            <button id="submit-report" class="btn btn-primary float-right">Submit</button>
+        </form>
     </div>
-    <button id="submit-report" class="btn btn-primary float-right">Submit</button>
-</form>
+</div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/new-report.js"></script>

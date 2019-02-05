@@ -9,7 +9,8 @@ var HTML = {
     // type: "GET",
     // url: "/search/" + searchSelector + "/" + searchInput,
     // success: function() {
-    window.location.href = "/search/" + searchSelector + "/" + searchInput;
+    return (window.location.href =
+      "/search/" + searchSelector + "/" + searchInput);
   }
   // });
   // }
@@ -22,7 +23,10 @@ var handleSearchSubmit = function(event) {
     .val()
     .trim()
     .toLowerCase();
-  var searchInput = $searchInput.val().trim();
+  var searchInput = $searchInput
+    .val()
+    .trim()
+    .toLowerCase();
 
   HTML.returnPage(searchSelector, searchInput);
 };

@@ -2,7 +2,9 @@
 // =============================================================
 var express = require("express");
 var exphbs = require("express-handlebars");
-
+var passport = require("./config/passport");
+var session = require("express-session");
+var flash = require("connect-flash");
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -22,13 +24,6 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
-// Routes
-// =============================================================
-require("./routes/html-routes.js")(app);
-require("./routes/user-api-routes.js")(app);
-require("./routes/report-api-routes.js")(app);
-require("./routes/login-routes.js")(app);
-
 // Handlebars
 app.engine(
   "handlebars",
@@ -38,10 +33,21 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
+app.use(session({ secret: "waffles" }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 var syncOptions = {
   force: false
 };
 
+// Routes
+// =============================================================
+require("./routes/html-routes.js")(app);
+require("./routes/user-api-routes.js")(app);
+require("./routes/report-api-routes.js")(app);
+require("./routes/login-routes.js")(app);
+require("./routes/logout-routes.js")(app);
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
 if (process.env.NODE_ENV === "test") {

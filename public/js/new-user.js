@@ -18,9 +18,9 @@ var API = {
 
 var handleUserSubmit = function(event) {
   event.preventDefault();
-  console.log($userName);
+  console.log($userName.val());
   var userObject = {
-    userName: $("#username").val(),
+    userName: $("#new-username").val(),
     password: $userPass.val()
   };
 

@@ -12,8 +12,14 @@ module.exports = {
     username: process.env.USER,
     password: process.env.PASS,
     database: "testdb",
+<<<<<<< Updated upstream
     host: localhost,
     dialect: "mysql"
+=======
+    host: process.env.HOST,
+    dialect: "mysql",
+    logging: false
+>>>>>>> Stashed changes
   },
   production: {
     // eslint-disable-next-line camelcase

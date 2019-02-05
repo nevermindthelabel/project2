@@ -11,15 +11,16 @@
 
 <body>
   <div id="navbar">
+    	<a class="navbar-brand" href="#">
+				<img src="img/logo.png" width="375" height="50" alt=""></a>
     <a href="/">Home</a>
-    <a href="#contact">Contact</a>
-    <form class="navbar-form navbar-right" role="search">
+    <a href="#contact">Contact</a> 
+    <form class="navbar-form navbar-right" role="login ">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search this site">
+        <input type="text" placeholder="Username" name="username">
+        <input type="text" placeholder="Password" name="psw">
         <span class="input-group-btn">
-          <button type="submit" class="btn btn-default">
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
+          <button type="submit" class="btn btn-default">Login</button>
         </span>
         <button onclick="document.getElementById('id01').style.display='block'">Login</button>
         <!-- Modal Content -->
@@ -48,13 +49,13 @@
   {{{body}}}
 
   <footer>
-    <p class="text-center"> Developed By <a href="https://github.com/cbessjr">Charles Bess</a>,
-      <a href="https://github.com/BrenKnigh">Brenden Knight</a>,
-      <a href="https://github.com/jamesbarker585">James Barker</a>,
-      <a href="https://github.com/nevermindthelabel">Matt Kilcup</a>,
-      <a href="https://github.com/ghost0fharambe">Adam Karman</a></p>
-    <script src="assets/javascript/logic.js"></script>
-  </footer>
+		<p class="text-center"> Developed By <a href="https://github.com/cbessjr">Charles Bess</a>,
+			<a href="https://github.com/BrenKnigh">Brenden Knight</a>,
+			<a href="https://github.com/jamesbarker585">James Barker</a>,
+			<a href="https://github.com/nevermindthelabel">Matt Kilcup</a>,
+			<a href="https://github.com/ghost0fharambe">Adam Karman</a></p>
+		<script src="assets/javascript/logic.js"></script>
+	</footer>
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 var db = require("../models");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
   //GET Route to root page
@@ -13,7 +14,7 @@ module.exports = function(app) {
   });
 
   //GET Route to display submit new report page
-  app.get("/reports/new", function(req, res) {
+  app.get("/reports/new", isAuthenticated, function(req, res) {
     res.render("new-report");
   });
 

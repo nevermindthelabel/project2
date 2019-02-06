@@ -48,4 +48,16 @@ module.exports = function(app) {
       });
     });
   });
+
+  app.get("/search/own", isAuthenticated, function(req, res) {
+    db.Reports.findAll({
+      where: {
+        UserId: req.user.id
+      }
+    }).then(function(dbData) {
+      res.render("view-own", {
+        reports: dbData
+      });
+    });
+  });
 };

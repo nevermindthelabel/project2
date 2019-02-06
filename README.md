@@ -1,7 +1,7 @@
 # Project-2
 P2-Team-3 Collaboration Project
 
-# Project Title: Traffic
+# Project Title: TrafficMon (Traffic Monitor)
 <br>
 ## Team Members:
 <br>
@@ -15,9 +15,9 @@ Charles Bess, Jr.
 <br>
 ## Overview
 
-Traffic is a reporting application to post and review “reported” traffic conditions by users in your area. All “reported” traffic conditions are posted by Traffic application users. Casual users (Non-registered users) can view traffic alerts but not post traffic alerts.
+TrafficMon is a reporting application to post and review “reported” traffic conditions by users in your area. All “reported” traffic conditions are posted by TrafficMon application users. Casual users (Non-registered users) can view traffic alerts but not post traffic alerts.
 
-Traffic alerts are 
+TrafficMon alerts are searchable by City or State. Only authenticated users can post reports for viewing.
 
 
 ## Running the application
@@ -78,7 +78,7 @@ Add the user name and password to the local database connection. The values must
 
 Once NPM has been installed run the following command:
 
-NPM I [PRESS ENTER]
+NPM I [ENTER]
 
 The cloned package.json will allow the command to install all the set dependencies for the application. 
 

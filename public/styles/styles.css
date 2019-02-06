@@ -92,6 +92,10 @@ body {
   cursor: pointer;
 }
 
+img {
+  margin: auto;
+}
+
 /* Add Zoom Animation */
 .animate {
   -webkit-animation: animatezoom 0.6s;

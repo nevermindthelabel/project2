@@ -1,7 +1,12 @@
 var db = require("../models");
-//ar passport = require("../config/passport");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
+  app.get("/api/users/current-user", isAuthenticated, function(req, res) {
+    console.log(req.user);
+    res.json(req.user);
+  });
+
   app.post("/api/users", function(req, res) {
     db.Users.create(req.body)
       .then(function(dbData) {

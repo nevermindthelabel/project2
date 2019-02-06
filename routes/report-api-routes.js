@@ -30,7 +30,9 @@ module.exports = function(app) {
 
   // POST route for saving a new post
   app.post("/api/reports", function(req, res) {
-    db.Reports.create(req.body).then(function(dbData) {
+    var newReport = req.body;
+    newReport.UserId = req.user.id;
+    db.Reports.create(newReport).then(function(dbData) {
       res.json(dbData);
     });
   });

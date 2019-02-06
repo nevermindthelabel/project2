@@ -30,7 +30,7 @@ passport.use(
           });
         }
         // If none of the above, return the user
-        return done(null, dbUser);
+        return done(null, dbUser.get());
       });
     }
   )
@@ -39,12 +39,21 @@ passport.use(
 // In order to help keep authentication state across HTTP requests,
 // Sequelize needs to serialize and deserialize the user
 // Just consider this part boilerplate needed to make it all work
-passport.serializeUser(function(user, cb) {
-  cb(null, user);
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
 });
 
-passport.deserializeUser(function(obj, cb) {
-  cb(null, obj);
+passport.deserializeUser(function(id, done) {
+  // db.Users.findById(id, function(err, user) {
+  //   done(err, user);
+  // });
+  db.Users.findById(id).then(function(user) {
+    if (user) {
+      done(null, user.get());
+    } else {
+      done(user.errors, null);
+    }
+  });
 });
 
 // Exporting our configured passport

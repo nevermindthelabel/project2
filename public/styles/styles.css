@@ -147,3 +147,12 @@ footer {
   align-self: center;
   width: 60%;
 }
+
+.backgroundColor {
+  border: 8px solid #4285f4;
+  background: lightblue;
+}
+
+table {
+  border: 8px solid #4285f4;
+}

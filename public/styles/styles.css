@@ -151,8 +151,10 @@ footer {
 .backgroundColor {
   border: 8px solid #4285f4;
   background: lightblue;
+  padding: 2rem;
 }
 
 table {
   border: 8px solid #4285f4;
+  max-height: 80%;
 }

@@ -1,6 +1,6 @@
-<table class="table table-sm table-light">
+<table class="table table-hover table-sm table-light">
     <thead class="thead-dark">
-        <tr>
+        <tr class="table-striped table-bordered">
             <th scope="col">Type</th>
             <th scope="col">Description</th>
             <th scope="col">Location</th>
@@ -10,7 +10,7 @@
     </thead>
     <tbody>
         {{#each reports}}
-        <tr>
+        <tr class="table-striped table-bordered table-hover">
             <td>{{this.type}}</td>
             <td>{{this.description}}</td>
             <td>{{this.location}}</td>

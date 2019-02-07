@@ -2,9 +2,9 @@
 P2-Team-3 Collaboration Project
 
 # Project Title: TrafficMon (Traffic Monitor)
-<br>
+
 ## Team Members:
-<br>
+
 
 Matt Kilcup <p>
 Brenden Knight <p>
@@ -12,7 +12,7 @@ James Barker <p>
 Adam Karman <p>
 Charles Bess, Jr.
 
-<br>
+
 ## Overview
 
 TrafficMon is a reporting application to post and review “reported” traffic conditions by users in your area. All “reported” traffic conditions are posted by TrafficMon application users. Casual users (Non-registered users) can view traffic alerts but not post traffic alerts.
@@ -33,10 +33,10 @@ The application can be launched from the following link to Heroku:
 
 The application and database (JawsDB) will run through Heroku.
 
-<br>
+
 - OR - 
 
-<br>
+
 
 
 ## Running the application (local)
@@ -65,9 +65,9 @@ Once the application has been cloned, create a .ENV file at the root of the clon
 
 Add the following data to the .ENV file:
 
-MYSQL_USERNAME="user name"
+```MYSQL_USERNAME="user name"
 PASS="password"
-HOST="localhost"
+HOST="localhost"```
 
 Add the user name and password to the local database connection. The values must be inside the quotations as shown above.
 
@@ -78,7 +78,7 @@ Add the user name and password to the local database connection. The values must
 
 Once NPM has been installed run the following command:
 
-NPM I [ENTER]
+```NPM I``` 
 
 The cloned package.json will allow the command to install all the set dependencies for the application. 
 
@@ -117,7 +117,7 @@ Install the package(s) from the terminal in the folder the application was clone
  
 Run the following command from the terminal:
 
-Node server.js [ENTER]
+```node server.js```
 
 The command will connect to the database.
 
@@ -125,7 +125,7 @@ The command will connect to the database.
 
 From the browser, navigate to the following location:
 
-Localhost:8080
+[localhost:8080](http:\\localhost:8080)
 
 <br>
   

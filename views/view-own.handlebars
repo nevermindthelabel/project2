@@ -16,9 +16,11 @@
             <td>{{this.location}}</td>
             <td>{{this.city}}</td>
             <td>{{this.state}}</td>
+            <td><button data-value={{this.id}} class="btn delete-btn"><i class="fa fa-trash"></i></button></td>
         </tr>
         {{/each}}
     </tbody>
 </table>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/delete-own-report.js"></script>

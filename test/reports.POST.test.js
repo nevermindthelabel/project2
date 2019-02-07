@@ -26,7 +26,8 @@ describe("POST /api/reports", function() {
       description: "First Description",
       location: "First Location",
       city: "First City",
-      state: "First State:"
+      state: "First State:",
+      UserId: "1"
     };
 
     // POST the request body to the server

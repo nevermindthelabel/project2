@@ -3,7 +3,14 @@
         <form class="clearfix mb-4" action="POST">
             <div class="form-group">
                 <label for="new-report">Enter Report Information</label>
-                <input type="text" id="type" class="form-control" aria-describedby="new-report" placeholder="Type">
+                {{!-- <input type="text" id="type" class="form-control" aria-describedby="new-report" placeholder="Type"> --}}
+                <select class="form-control form-control-lg" id="type">
+                    <option>Traffic</option>
+                    <option>Minor Accident</option>
+                    <option>Major Accident</option>
+                    <option>Road Work</option>
+                    <option>Police</option>
+                </select>
                 <input type="text" id="description" class="form-control" aria-describedby="new-report" placeholder="Description">
                 <input type="text" id="location" class="form-control" aria-describedby="new-report" placeholder="Location (Describe location)">
                 <input type="text" id="city" class="form-control" aria-describedby="new-report" placeholder="City">

@@ -5,7 +5,7 @@ module.exports = function(app) {
   //GET Route to root page
   app.get("/", function(req, res) {
     res.render("index", {
-      msg: "Traffic Mon!"
+      msg: "TrafficMon!"
     });
   });
   //GET Route to display submit new user form

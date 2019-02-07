@@ -65,9 +65,11 @@ Once the application has been cloned, create a .ENV file at the root of the clon
 
 Add the following data to the .ENV file:
 
-```MYSQL_USERNAME="user name"
+```
+MYSQL_USERNAME="user name"
 PASS="password"
-HOST="localhost"```
+HOST="localhost"
+```
 
 Add the user name and password to the local database connection. The values must be inside the quotations as shown above.
 

@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="container">
-        <form class="clearfix mb-4" action="POST">
-            <div class="form-group backgroundColor">
+    <div class="container backgroundColor mb-4 d-flex justify-content-center">
+        <form class="clearfix col-md-8" action="POST">
+            <div class="form-group">
                 <h2><label for="new-report">Enter Report Information</label></h2>
                 <select class="form-control" id="type">
                     <option>Traffic</option>
@@ -10,10 +10,12 @@
                     <option>Road Work</option>
                     <option>Police</option>
                 </select>
-                <input type="text" id="description" class="form-control" aria-describedby="new-report" placeholder="Description">
-                <input type="text" id="location" class="form-control" aria-describedby="new-report" placeholder="Location (Describe location)">
-                <input type="text" id="city" class="form-control" aria-describedby="new-report" placeholder="City">
-                <select class="form-control" id="state-select">
+                <input type="text" id="description" class="form-control mt-1" aria-describedby="new-report"
+                    placeholder="Description">
+                <input type="text" id="location" class="form-control mt-1" aria-describedby="new-report"
+                    placeholder="Location (Describe location)">
+                <input type="text" id="city" class="form-control mt-1" aria-describedby="new-report" placeholder="City">
+                <select class="form-control mt-1" id="state-select">
                     <option>Alabama</option>
                     <option>Alaska</option>
                     <option>Arizona</option>
@@ -65,7 +67,7 @@
                     <option>Wisconsin</option>
                     <option>Wyoming</option>
                 </select>
-                <button id="submit-report" class="btn btn-primary float-right">Submit</button>
+                <button id="submit-report" class="btn btn-primary float-right mt-2">Submit</button>
             </div>
         </form>
     </div>
